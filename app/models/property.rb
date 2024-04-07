@@ -1,6 +1,7 @@
 class Property < ApplicationRecord
   # Associations
   belongs_to :user
+  belongs_to :country
 
   # Validations
   validates :name,
