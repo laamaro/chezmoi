@@ -3,4 +3,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  # Associations
+  has_many :properties, dependent: :destroy
+
+  # Validations
+  validates :first_name, :last_name, :user_type, presence: true
+
+  # Enums
+  enum user_type: {
+    landlord: 0,
+    guest: 1
+  }
 end
