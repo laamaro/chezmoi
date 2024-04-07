@@ -9,4 +9,10 @@ class User < ApplicationRecord
 
   # Validations
   validates :first_name, :last_name, :user_type, presence: true
+
+  # Enums
+  enum user_type: {
+    landlord: 0,
+    guest: 1
+  }
 end

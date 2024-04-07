@@ -11,4 +11,10 @@ class Property < ApplicationRecord
             :bedroom_count,
             :bed_count,
             presence: true
+
+  # Enums
+  enum type: {
+    entire_place: 0,
+    room_only: 1
+  }
 end
