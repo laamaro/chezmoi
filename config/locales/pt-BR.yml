@@ -15,8 +15,8 @@ pt-BR:
         pet: 'Permitido Pets'
         start_date: 'Data Inicial'
         smoking: 'Fumantes'
-        type: 'Tipo de Hospedagem'
-        types:
+        property_type: 'Tipo de Hospedagem'
+        property_types:
           entire_place: 'Propriedade Inteira'
           room_only: 'Apenas o Quarto'
         wifi: 'Wi-fi'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_07_233229) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_08_031528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_07_233229) do
     t.float "longitude"
     t.date "start_date"
     t.date "end_date"
-    t.integer "type"
+    t.integer "property_type"
     t.integer "bedroom_count"
     t.integer "bed_count"
     t.boolean "smoking"

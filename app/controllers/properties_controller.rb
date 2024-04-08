@@ -14,6 +14,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
+    @property.user = current_user
 
     if @property.save
       redirect_to @property
@@ -29,7 +30,7 @@ class PropertiesController < ApplicationController
   def update
     respond_to do |format|
       if @property.update(property_params)
-        format.html { redirect_to @property, notice: "Dados salvos com sucesso!" }
+        format.html { redirect_to @property }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -48,7 +49,7 @@ class PropertiesController < ApplicationController
 
   def property_params
     params.require(:property).permit(:name, :description, :address, :start_date, :end_date,
-                                     :type, :bed_count, :bedroom_count, :smoking, :pet,
+                                     :property_type, :bed_count, :bedroom_count, :smoking, :pet,
                                      :wifi, :minimum_stay, :maximum_guests, :country_id)
   end
 

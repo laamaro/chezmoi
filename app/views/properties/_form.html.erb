@@ -19,7 +19,7 @@
     <%= f.input :wifi %>
     <%= f.input :minimum_stay %>
     <%= f.input :maximum_guests %>
-    <%= f.input :type, collection: Property.types.keys.map { |k| [t("activerecord.attributes.property.types.#{k}"), k]} %>
+    <%= f.input :property_type, collection: Property.property_types.keys.map { |k| [t("activerecord.attributes.property.property_types.#{k}"), k]} %>
   </div>
 
   <div class="form-actions text-center">
