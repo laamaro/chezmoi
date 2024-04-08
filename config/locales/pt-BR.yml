@@ -1,4 +1,14 @@
 pt-BR:
   activerecord:
     attributes:
+      booking:
+      property:
+      user:
     models:
+      booking: 'Reserva'
+      country: 'País'
+      property: 'Propriedade'
+      user: 'Usuário'
+  titles:
+    property:
+      list: 'Propriedades Disponíveis'
