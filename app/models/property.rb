@@ -8,13 +8,13 @@ class Property < ApplicationRecord
             :address,
             :start_date,
             :end_date,
-            :type,
+            :property_type,
             :bedroom_count,
             :bed_count,
             presence: true
 
   # Enums
-  enum type: {
+  enum property_type: {
     entire_place: 0,
     room_only: 1
   }
