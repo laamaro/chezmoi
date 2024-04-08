@@ -12,5 +12,5 @@ if Rails.env.development?
   #------------ USERS
   puts "creating users..."
   User.create!(first_name: 'Branquinho', last_name: 'Chat',
-               user_type: 'landlord', email: 'branquinho@email.com', password: '123123')
+               user_type: 0, email: 'branquinho@email.com', password: '123123')
 end
