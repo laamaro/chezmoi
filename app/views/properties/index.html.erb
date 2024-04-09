@@ -3,16 +3,18 @@
 
 <div class="cards">
   <% @properties.each do |property| %>
-    <div class="card-property">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-property-infos">
-        <div>
-          <h2><%= property.name %></h2>
-          <p><%= property.description %></p>
+    <%= link_to property_path(property) do %>
+      <div class="card-property">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-property-infos">
+          <div>
+            <h2><%= property.name %></h2>
+            <p><%= property.description %></p>
+          </div>
+          <h2 class="card-property-pricing">£99.99</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-property-user avatar-bordered" />
         </div>
-        <h2 class="card-property-pricing">£99.99</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-property-user avatar-bordered" />
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

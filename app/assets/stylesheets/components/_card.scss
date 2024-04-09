@@ -26,6 +26,12 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 .card-property > img {
@@ -38,12 +44,14 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-property p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  text-decoration: none;
 }
 
 
