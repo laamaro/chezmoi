@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   # Associations
   has_many :properties, dependent: :destroy
+  has_one_attached :photo
 
   # Validations
   validates :first_name, :last_name, :user_type, presence: true
