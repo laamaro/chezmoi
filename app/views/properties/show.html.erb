@@ -1,1 +1,30 @@
-<h1><%= @property.name %></h1>
+<div class="d-flex">
+  <div class="image-property">
+  </div>
+
+  <div class="property-info">
+    <h1 class="text-center mb-4"><%= @property.name %></h1>
+    <p><%= @property.description %></p>
+
+    <div class="information-grid">
+      <p><strong><%= t('titles.property.location') %>:</strong></p>
+      <p class="text-center"><%= @property.address %></p>
+      <p><strong><%= t('activerecord.attributes.property.bed_count') %>:</strong></p>
+      <p class="text-center"><%= @property.bed_count %> camas</p>
+      <p><strong><%= t('activerecord.attributes.property.bedroom_count') %>:</strong></p>
+      <p class="text-center"><%= @property.bedroom_count %> quartos</p>
+      <p><strong><%= t('activerecord.attributes.property.maximum_guests') %>:</strong></p>
+      <p class="text-center"><%= @property.maximum_guests %> passoas</p>
+      <p><strong><%= t('activerecord.attributes.property.minimum_stay') %>:</strong></p>
+      <p class="text-center"><%= @property.minimum_stay %> dias</p>
+      <p><strong><%= t('activerecord.attributes.property.pet') %>:</strong></p>
+      <p class="text-center"><%= @property.pet ? '<i class="fa-solid fa-paw permited"></i>'.html_safe : '<i class="fa-solid fa-ban forbidden"></i>'.html_safe %></p>
+      <p><strong><%= t('activerecord.attributes.property.smoking') %>:</strong></p>
+      <p class="text-center"><%= @property.smoking ? '<i class="fa-solid fa-smoking permited"></i>'.html_safe : '<i class="fa-solid fa-ban forbidden"></i>'.html_safe %></p>
+      <p><strong><%= t('activerecord.attributes.property.wifi') %>:</strong></p>
+      <p class="text-center"><%= @property.wifi ? '<i class="fa-solid fa-wifi permited"></i>'.html_safe : '<i class="fa-solid fa-ban forbidden"></i>'.html_safe %></p>
+      <p><strong><%= t('activerecord.attributes.property.property_type') %>:</strong></p>
+      <p class="text-center"><%= t("activerecord.attributes.property.property_types.#{@property.property_type}") %></p>
+    </div>
+  </div>
+</div>

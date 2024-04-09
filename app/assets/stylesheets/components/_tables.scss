@@ -1,0 +1,30 @@
+.image-property {
+  background-color: gray;
+  height: 100vh;
+  width: 50%;
+}
+
+.property-info {
+  width: 50%;
+  margin: 10px;
+}
+
+.information-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #5c5c5c;
+  box-shadow: 2px 0px 8px 0px #7b7b7b;
+
+  p {
+    margin-bottom: 0;
+    padding: 0.4rem;
+  }
+
+  .permited {
+    color: rgba(0, 91, 0, 0.939);
+  }
+
+  .forbidden {
+    color: rgba(161, 0, 0, 0.917);
+  }
+}
