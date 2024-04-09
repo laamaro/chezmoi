@@ -26,6 +26,12 @@ pt-BR:
       country: 'País'
       property: 'Propriedade'
       user: 'Usuário'
+  buttons:
+    properties:
+      search: 'Buscar Propriedades'
+  countries:
+    brasilia: 'Brasília'
+    paris: 'Paris'
   date:
     order:
       - :day
@@ -49,5 +55,8 @@ pt-BR:
     submit:
       create: 'Criar'
   titles:
+    home:
+      banner: 'Ache o lugar perfeito para suas férias!'
+      subtitle: 'Cidades que estamos presentes'
     property:
       list: 'Propriedades Disponíveis'
