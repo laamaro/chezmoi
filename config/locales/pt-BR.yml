@@ -28,6 +28,7 @@ pt-BR:
       user: 'Usuário'
   buttons:
     properties:
+      add: 'Colocar para Reserva'
       search: 'Buscar Propriedades'
   countries:
     brasilia: 'Brasília'
