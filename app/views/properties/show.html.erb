@@ -5,7 +5,7 @@
         <div class="carousel-inner">
           <% @property.photos.each_with_index do |photo, index| %>
             <div class="carousel-item <%= "active" if index.zero? %>"">
-              <%= cl_image_tag photo.key, class: 'd-block w-100' %>
+              <%= cl_image_tag photo.key, class: 'd-block w-100', crop: :fit %>
             </div>
           <% end %>
         </div>
@@ -44,6 +44,10 @@
       <p class="text-center"><%= @property.wifi ? '<i class="fa-solid fa-wifi permited"></i>'.html_safe : '<i class="fa-solid fa-ban forbidden"></i>'.html_safe %></p>
       <p><strong><%= t('activerecord.attributes.property.property_type') %>:</strong></p>
       <p class="text-center"><%= t("activerecord.attributes.property.property_types.#{@property.property_type}") %></p>
+    </div>
+
+    <div>
+      <%= link_to 'Voltar', properties_path, class: 'btn btn-home-add' %>
     </div>
   </div>
 </div>
