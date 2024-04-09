@@ -2,6 +2,7 @@ class Property < ApplicationRecord
   # Associations
   belongs_to :user
   belongs_to :country
+  has_many_attached :photos
 
   # Validations
   validates :name,

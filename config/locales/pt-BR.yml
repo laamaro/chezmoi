@@ -21,6 +21,15 @@ pt-BR:
           room_only: 'Apenas o Quarto'
         wifi: 'Wi-fi'
       user:
+        about: 'Sobre Você'
+        date_of_birth: 'Data de Nascimento'
+        first_name: 'Primeiro Nome'
+        last_name: 'Último Nome'
+        photo: 'Foto'
+        user_type: 'Tipo de Usuário'
+        user_types:
+          landlord: 'Proprietário'
+          guest: 'Hóspede'
     models:
       booking: 'Reserva'
       country: 'País'

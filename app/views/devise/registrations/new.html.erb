@@ -6,7 +6,6 @@
   <div class="form-inputs">
     <%= f.input :first_name, required: true %>
     <%= f.input :last_name, required: true %>
-    <%= f.input :address, required: true %>
     <%= f.input :date_of_birth, required: true %>
     <%= f.input :email,
                 required: true,
@@ -20,6 +19,8 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :about, as: :text %>
+    <%= f.input :user_type, collection: User.user_types.keys.map { |k| [t("activerecord.attributes.user.user_types.#{k}"), k]} %>
+    <%= f.input :photo, as: :file %>
   </div>
 
   <div class="form-actions">

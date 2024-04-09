@@ -20,6 +20,7 @@
     <%= f.input :minimum_stay %>
     <%= f.input :maximum_guests %>
     <%= f.input :property_type, collection: Property.property_types.keys.map { |k| [t("activerecord.attributes.property.property_types.#{k}"), k]} %>
+     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   </div>
 
   <div class="form-actions text-center">
