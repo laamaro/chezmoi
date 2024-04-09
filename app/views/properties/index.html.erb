@@ -6,7 +6,11 @@
     <% @properties.each do |property| %>
       <%= link_to property_path(property) do %>
         <div class="card-property">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% if property.photos.attached? %>
+            <%= cl_image_tag property.photos.first.key %>
+          <% else %>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% end %>
           <div class="card-property-infos">
             <div>
               <h2><%= property.name %></h2>
