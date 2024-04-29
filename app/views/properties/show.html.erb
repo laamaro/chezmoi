@@ -9,15 +9,15 @@
             </div>
           <% end %>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     <% end %>
   </div>
 
@@ -45,6 +45,16 @@
       <p><strong><%= t('activerecord.attributes.property.property_type') %>:</strong></p>
       <p class="text-center"><%= t("activerecord.attributes.property.property_types.#{@property.property_type}") %></p>
     </div>
+
+    <h3 class="text-center my-2"><%= t('titles.booking.create') %></h3>
+    <%= simple_form_for [@property, @booking] do |f| %>
+      <%= f.input :start_date, as: :date, start_year: Date.today.year, end_year: 2044 %>
+      <%= f.input :end_date, as: :date, start_year: Date.today.year, end_year: 2044 %>
+
+      <div class="form-actions text-center">
+        <%= f.submit t('helpers.submit.booking.create')  %>
+      </div>
+    <% end %>
 
     <div>
       <%= link_to 'Voltar', properties_path, class: 'btn btn-home-add' %>

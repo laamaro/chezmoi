@@ -63,8 +63,13 @@ pt-BR:
       - Dezembro
   helpers:
     submit:
-      create: 'Criar'
+      booking:
+        create: 'Reservar'
+      property:
+        create: 'Criar'
   titles:
+    booking:
+      create: 'Reserve Agora'
     home:
       banner: 'Ache o lugar perfeito para suas férias!'
       subtitle: 'Cidades que estamos presentes'
