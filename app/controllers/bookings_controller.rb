@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.total_price = @booking.total_days * @property.price_per_night
 
     if @booking.save
-      redirect_to @booking
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
