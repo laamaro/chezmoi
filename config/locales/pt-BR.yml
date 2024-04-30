@@ -79,6 +79,7 @@ pt-BR:
     links:
       add_property: 'Adicionar Propriedade'
       list_properties: 'Ver Propriedades'
+      my_bookings: 'Minhas Reservas'
       my_properties: 'Minhas Propriedades'
   titles:
     booking:

@@ -1,0 +1,26 @@
+<div class="cards">
+  <% @bookings.each do |booking| %>
+    <%= link_to property_path(booking.property) do %>
+      <div class="card-property">
+        <% if booking.property.photos.attached? %>
+          <%= cl_image_tag booking.property.photos.first.key %>
+        <% else %>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <% end %>
+        <div class="card-property-infos">
+          <div>
+            <h2><%= booking.property.name %></h2>
+            <p><%= booking.property.description %></p>
+          </div>
+          <h2 class="card-property-pricing">£99.99</h2>
+
+          <% if booking.property.user.photo.attached? %>
+            <%= cl_image_tag booking.property.user.photo.key, class: 'card-property-user avatar-bordered' %>
+          <% else %>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-property-user avatar-bordered" />
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

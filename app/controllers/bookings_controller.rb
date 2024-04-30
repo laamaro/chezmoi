@@ -1,9 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :set_property, only: %i[index new create]
+  before_action :set_property, only: %i[new create]
   before_action :set_booking, only: %i[edit update show destroy]
 
   def index
-    @bookings = policy_scope(Booking)
+    @bookings = policy_scope(Booking).where(user: current_user)
   end
 
   def show; end

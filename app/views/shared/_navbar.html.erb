@@ -24,7 +24,8 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to t('navbar.links.add_property'), new_property_path, class: "dropdown-item" %>
-              <%= link_to t('navbar.links.list_properties'), properties_path %>
+              <%= link_to t('navbar.links.list_properties'), properties_path, class: "dropdown-item" %>
+              <%= link_to t('navbar.links.my_bookings'), bookings_path, class: "dropdown-item" %>
               <% if current_user.landlord? %>
                 <%= link_to t('navbar.links.my_properties'), my_properties_path, class: "dropdown-item" %>
               <% end %>
