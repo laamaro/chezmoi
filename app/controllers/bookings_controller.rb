@@ -3,13 +3,15 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[edit update show destroy]
 
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   def show; end
 
   def new
     @booking = Booking.new
+
+    authorize @booking
   end
 
   def create
@@ -18,6 +20,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.total_price = @booking.total_days * @property.price_per_night
 
+    authorize @booking
+
     if @booking.save
       redirect_to root_path
     else
@@ -25,8 +29,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     respond_to do |format|
@@ -54,6 +57,8 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+
+    authorize @booking
   end
 
   def set_property

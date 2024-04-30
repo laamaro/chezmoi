@@ -2,7 +2,7 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: %i[edit update show destroy]
 
   def index
-    @properties = Property.all
+    @properties = policy_scope(Property)
   end
 
   def show
@@ -12,11 +12,15 @@ class PropertiesController < ApplicationController
   def new
     @property = Property.new
     @countries = Country.all
+
+    authorize @property
   end
 
   def create
     @property = Property.new(property_params)
     @property.user = current_user
+
+    authorize @property
 
     if @property.save
       redirect_to @property
@@ -59,5 +63,7 @@ class PropertiesController < ApplicationController
 
   def set_property
     @property = Property.find(params[:id])
+
+    authorize @property
   end
 end
