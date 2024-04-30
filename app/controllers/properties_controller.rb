@@ -13,6 +13,7 @@ class PropertiesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @disabled_dates = @property.bookings.map { |b| (b.start_date..b.end_date).to_a }.flatten
   end
 
   def new
