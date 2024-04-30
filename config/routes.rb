@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get 'my_properties', to: 'properties#my_properties', as: :my_properties
 
   resources :bookings, except: %i[new create]
+  resources :users, only: :show
 end

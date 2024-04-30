@@ -59,7 +59,10 @@
     <% end %>
 
     <div>
-      <%= link_to 'Voltar', properties_path, class: 'btn btn-home-add' %>
+      <%= link_to t('buttons.back'), properties_path, class: 'btn btn-home-add' %>
+    </div>
+    <div>
+      <%= link_to t('buttons.users.profile'), user_path(@property.user), class: 'btn btn-home-add' %>
     </div>
   </div>
 </div>

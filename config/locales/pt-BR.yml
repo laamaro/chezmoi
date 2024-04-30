@@ -44,9 +44,12 @@ pt-BR:
       property: 'Propriedade'
       user: 'Usuário'
   buttons:
+    back: 'Voltar'
     properties:
       add: 'Colocar para Reserva'
       search: 'Buscar Propriedades'
+    users:
+      profile: 'Ver Perfil do Proprietário'
   countries:
     brasilia: 'Brasília'
     paris: 'Paris'
