@@ -49,7 +49,12 @@
     <% unless @property.user == current_user %>
       <h3 class="text-center my-2"><%= t('titles.booking.create') %></h3>
       <%= simple_form_for [@property, @booking] do |f| %>
-        <%= f.input :start_date, as: :date, start_year: Date.today.year, end_year: 2044 %>
+        <%= f.input :start_date, as: :string, input_html: { data: {
+                                                    controller: "flatpickr",
+                                                    # flatpickr_date_format: "Y-m-d",
+                                                    # flatpickr_min_date: Time.zone.now,
+                                                    # flatpickr_disable: @property.bookings.map(&:end_date)
+                                                  } } %>
         <%= f.input :end_date, as: :date, start_year: Date.today.year, end_year: 2044 %>
 
         <div class="form-actions text-center">
