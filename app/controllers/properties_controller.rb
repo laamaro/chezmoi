@@ -5,6 +5,12 @@ class PropertiesController < ApplicationController
     @properties = policy_scope(Property)
   end
 
+  def my_properties
+    @properties = Property.where(user: current_user)
+
+    authorize @properties
+  end
+
   def show
     @booking = Booking.new
   end
@@ -23,6 +29,8 @@ class PropertiesController < ApplicationController
     authorize @property
 
     if @property.save
+      @property.user.landlord!
+
       redirect_to @property
     else
       render :new, status: :unprocessable_entity

@@ -75,6 +75,11 @@ pt-BR:
         create: 'Reservar'
       property:
         create: 'Criar'
+  navbar:
+    links:
+      add_property: 'Adicionar Propriedade'
+      list_properties: 'Ver Propriedades'
+      my_properties: 'Minhas Propriedades'
   titles:
     booking:
       create: 'Reserve Agora'

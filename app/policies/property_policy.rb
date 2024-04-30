@@ -10,6 +10,10 @@ class PropertyPolicy < ApplicationPolicy
     true
   end
 
+  def my_properties?
+    user.landlord?
+  end
+
   def new?
     true
   end
