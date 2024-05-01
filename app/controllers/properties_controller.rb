@@ -2,21 +2,36 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: %i[edit update show destroy]
 
   def index
-    @properties = Property.all
+    @properties = policy_scope(Property)
   end
 
-  def show; end
+  def my_properties
+    @properties = Property.where(user: current_user)
+
+    authorize @properties
+  end
+
+  def show
+    @booking = Booking.new
+    @disabled_dates = @property.bookings.map { |b| (b.start_date..b.end_date).to_a }.flatten
+  end
 
   def new
     @property = Property.new
     @countries = Country.all
+
+    authorize @property
   end
 
   def create
     @property = Property.new(property_params)
     @property.user = current_user
 
+    authorize @property
+
     if @property.save
+      @property.user.landlord!
+
       redirect_to @property
     else
       render :new, status: :unprocessable_entity
@@ -50,10 +65,14 @@ class PropertiesController < ApplicationController
   def property_params
     params.require(:property).permit(:name, :description, :address, :start_date, :end_date,
                                      :property_type, :bed_count, :bedroom_count, :smoking, :pet,
-                                     :wifi, :minimum_stay, :maximum_guests, :country_id, photos: [])
+                                     :wifi, :minimum_stay, :maximum_guests, :country_id, :price_per_night,
+                                     :fee_price, :children, :elevator, :smoke_detector, :parking, :check_in,
+                                     :check_out, photos: [])
   end
 
   def set_property
     @property = Property.find(params[:id])
+
+    authorize @property
   end
 end

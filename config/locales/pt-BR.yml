@@ -2,23 +2,32 @@ pt-BR:
   activerecord:
     attributes:
       booking:
+        date_range: 'Selecione as Datas'
       property:
         address: 'Endereço'
         bed_count: 'Quantidade de Camas'
         bedroom_count: 'Quantidade de Quartos'
+        check_in: 'Horário de Check In'
+        check_out: 'Horário de Check Out'
+        children: 'Adaptado para Crianças'
         country: 'País'
         description: 'Descrição'
+        elevator: 'Possui Elevador'
         end_date: 'Data Final'
+        fee_price: 'Preço da Taxa'
         maximum_guests: 'Quantidade Máxima de Hóspedes'
         minimum_stay: 'Dias Mínimos para a Reserva'
         name: 'Nome'
+        parking: 'Estacionamento'
         pet: 'Permitido Pets'
-        start_date: 'Data Inicial'
-        smoking: 'Fumantes'
+        price_per_night: 'Preço por Noite'
         property_type: 'Tipo de Hospedagem'
         property_types:
           entire_place: 'Propriedade Inteira'
           room_only: 'Apenas o Quarto'
+        start_date: 'Data Inicial'
+        smoke_detector: 'Detector de Fumaça'
+        smoking: 'Fumantes'
         wifi: 'Wi-fi'
       user:
         about: 'Sobre Você'
@@ -36,9 +45,12 @@ pt-BR:
       property: 'Propriedade'
       user: 'Usuário'
   buttons:
+    back: 'Voltar'
     properties:
       add: 'Colocar para Reserva'
       search: 'Buscar Propriedades'
+    users:
+      profile: 'Ver Perfil do Proprietário'
   countries:
     brasilia: 'Brasília'
     paris: 'Paris'
@@ -63,8 +75,19 @@ pt-BR:
       - Dezembro
   helpers:
     submit:
-      create: 'Criar'
+      booking:
+        create: 'Reservar'
+      property:
+        create: 'Criar'
+  navbar:
+    links:
+      add_property: 'Adicionar Propriedade'
+      list_properties: 'Ver Propriedades'
+      my_bookings: 'Minhas Reservas'
+      my_properties: 'Minhas Propriedades'
   titles:
+    booking:
+      create: 'Reserve Agora'
     home:
       banner: 'Ache o lugar perfeito para suas férias!'
       subtitle: 'Cidades que estamos presentes'

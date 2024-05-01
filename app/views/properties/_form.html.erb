@@ -11,19 +11,27 @@
     <%= f.input :description, as: :text %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
+    <%= f.input :check_in %>
+    <%= f.input :check_out %>
     <%= f.input :address %>
     <%= f.input :bedroom_count %>
     <%= f.input :bed_count %>
     <%= f.input :smoking %>
     <%= f.input :pet %>
     <%= f.input :wifi %>
+    <%= f.input :children %>
+    <%= f.input :elevator %>
+    <%= f.input :smoke_detector %>
+    <%= f.input :parking %>
     <%= f.input :minimum_stay %>
     <%= f.input :maximum_guests %>
+    <%= f.input :price_per_night %>
+    <%= f.input :fee_price %>
     <%= f.input :property_type, collection: Property.property_types.keys.map { |k| [t("activerecord.attributes.property.property_types.#{k}"), k]} %>
      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   </div>
 
   <div class="form-actions text-center">
-    <%= f.button :submit, t('helpers.submit.create') %>
+    <%= f.button :submit, t('helpers.submit.property.create') %>
   </div>
 <% end %>

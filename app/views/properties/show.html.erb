@@ -9,15 +9,15 @@
             </div>
           <% end %>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     <% end %>
   </div>
 
@@ -46,8 +46,35 @@
       <p class="text-center"><%= t("activerecord.attributes.property.property_types.#{@property.property_type}") %></p>
     </div>
 
+    <% unless @property.user == current_user %>
+      <h3 class="text-center my-2"><%= t('titles.booking.create') %></h3>
+      <%= simple_form_for [@property, @booking] do |f| %>
+        <%= f.input :date_range, as: :string, input_html: { data: {
+                                                            controller: "flatpickr",
+                                                            flatpickr_date_format: "d/m/Y",
+                                                            flatpickr_min_date: Time.zone.now,
+                                                            flatpickr_disable: @disabled_dates,
+                                                            flatpickr_mode: 'range'
+                                                          } } %>
+        <%# <%= f.input :end_date, as: :string, input_html: { data: {
+                                                            controller: "flatpickr",
+                                                            flatpickr_date_format: "d/m/Y",
+                                                            flatpickr_min_date: Time.zone.now,
+                                                            flatpickr_disable: @disabled_dates,
+                                                            flatpickr_mode: 'range'
+                                                          } } %>
+
+        <div class="form-actions text-center">
+          <%= f.submit t('helpers.submit.booking.create')  %>
+        </div>
+      <% end %>
+    <% end %>
+
     <div>
-      <%= link_to 'Voltar', properties_path, class: 'btn btn-home-add' %>
+      <%= link_to t('buttons.back'), properties_path, class: 'btn btn-home-add' %>
+    </div>
+    <div>
+      <%= link_to t('buttons.users.profile'), user_path(@property.user), class: 'btn btn-home-add' %>
     </div>
   </div>
 </div>
