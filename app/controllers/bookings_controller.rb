@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.property = @property
     @booking.user = current_user
+    @booking.separate_dates
     @booking.total_price = @booking.total_days * @property.price_per_night
 
     authorize @booking
@@ -52,7 +53,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:date_range)
   end
 
   def set_booking

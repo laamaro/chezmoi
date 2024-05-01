@@ -2,6 +2,7 @@ pt-BR:
   activerecord:
     attributes:
       booking:
+        date_range: 'Selecione as Datas'
       property:
         address: 'Endereço'
         bed_count: 'Quantidade de Camas'
